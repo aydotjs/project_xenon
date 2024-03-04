@@ -33,13 +33,17 @@ def English_Pidgin_Dic(English_Sentence):
     pidgin_sentence = " ".join(pidgin_sentence)
     return pidgin_sentence
     """
-
+    #[Translation_Dic.get(word, word) for word in words]
     #"""
-    pidgin_sentence = [Translation_Dic.get(word, word) for word in words]
+    pidgin_sentence = list(map(lambda word: Translation_Dic.get(word, word), words))
     pidgin_sentence = " ".join(pidgin_sentence)
+    #movements_in_dollars = [50, 60, 70]
+    #movements_in_naira = [item*1600 for item in movements_in_dollars]
+    #print(movements_in_naira)
     movements_in_dollars = [50, 60, 70]
-    movements_in_naira = [item*1600 for item in movements_in_dollars]
-    print(movements_in_naira)
+    #squared_list = list(map(lambda x: x**2, original_list))
+    movement_in_naira = list(map(lambda movement: movement * 1600, movements_in_dollars))
+    print(movement_in_naira)
     return pidgin_sentence
     #"""
 
